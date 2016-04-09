@@ -10,15 +10,14 @@ public class FileHandler {
 	public static BufferedImage loadBufferedImage(String path) {
 		try {
 			return ImageIO.read(FileHandler.class.getResource(path));
-		} catch(IllegalArgumentException e) {
-			//e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// e.printStackTrace();
 			return null;
-		} catch(IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
-	
 
 	public static void writeBufferedImage(BufferedImage image, String path) {
 		try {
@@ -28,7 +27,5 @@ public class FileHandler {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
+
 }
