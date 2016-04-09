@@ -18,7 +18,9 @@ public class FileHandler {
 			return null;
 		}
 	}
-	public static void writeImage(BufferedImage image, String path) {
+	
+
+	public static void writeBufferedImage(BufferedImage image, String path) {
 		try {
 			ImageIO.write(image, "png", new File(path));
 		} catch (IOException e) {
@@ -26,6 +28,7 @@ public class FileHandler {
 			e.printStackTrace();
 		}
 	}
+	
 	
 	
 }
