@@ -1,31 +1,25 @@
 package util;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import org.opencv.core.Mat;
+import org.opencv.imgcodecs.Imgcodecs;
 
-import javax.imageio.ImageIO;
-
+/** FileHandler.java
+ * 
+ * Just a utility that centralizes file handling into one class, 
+ * making it more easier and more systematic.
+ */
 public class FileHandler {
-	public static BufferedImage loadBufferedImage(String path) {
-		try {
-			return ImageIO.read(FileHandler.class.getResource(path));
-		} catch (IllegalArgumentException e) {
-			// e.printStackTrace();
-			return null;
-		} catch (IOException e) {
-			e.printStackTrace();
-			return null;
-		}
+
+	public static Mat loadMatImage(String path) {
+		return Imgcodecs.imread(
+				FileHandler.class.getClass().getResource(path).getPath()
+				);
 	}
 
-	public static void writeBufferedImage(BufferedImage image, String path) {
-		try {
-			ImageIO.write(image, "png", new File(path));
-		} catch (IOException e) {
-			// Not supposed to happen.
-			e.printStackTrace();
-		}
+	public static void writeMatImage(String path, Mat image) {
+		Imgcodecs.imwrite(path, image);
 	}
+
+
 
 }
