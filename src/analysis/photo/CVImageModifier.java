@@ -20,15 +20,19 @@ public class CVImageModifier {
 	Scalar upperHSV = new Scalar(0, 0, 0);
 
 	public double[][][] loadHSBArray(Mat mat) {
-		int width = mat.width();
-		int height = mat.height();
+		int width = mat.width() - 1;
+		int height = mat.height() - 1;
 		double hsb[][][] = new double[3][width][height];
 		for (int xx = 0; xx < width; xx++) {
 			for (int yy = 0; yy < height; yy++) {
 				double[] tempHSB = mat.get(xx, yy);
-				hsb[0][xx][yy] = tempHSB[0];
-				hsb[1][xx][yy] = tempHSB[1];
-				hsb[2][xx][yy] = tempHSB[2];
+				try{
+					hsb[0][xx][yy] = tempHSB[0];
+					hsb[1][xx][yy] = tempHSB[1];
+					hsb[2][xx][yy] = tempHSB[2];
+				} catch (NullPointerException e){
+					return hsb;
+				}
 			}
 		}
 		return hsb;

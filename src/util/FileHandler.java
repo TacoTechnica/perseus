@@ -1,5 +1,13 @@
 package util;
 
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
 
@@ -11,9 +19,7 @@ import org.opencv.imgcodecs.Imgcodecs;
 public class FileHandler {
 
 	public static Mat readMatImage(String path) {
-		return Imgcodecs.imread(
-				FileHandler.class.getClass().getResource(path).getPath()
-				);
+		return Imgcodecs.imread(path);
 	}
 
 	public static void writeMatImage(String path, Mat image) {

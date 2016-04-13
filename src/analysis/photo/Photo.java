@@ -32,6 +32,7 @@ public class Photo {
 		sStDev = core.Statistics.getStDev(saturation);
 		vStDev = core.Statistics.getStDev(value);
 	}
+	//private double getVioletRedRatio();
 
 	public void display() {
 		System.out.println(vAvg);
