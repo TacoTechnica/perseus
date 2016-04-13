@@ -9,10 +9,9 @@ import org.opencv.imgcodecs.Imgcodecs;
  * making it more easier and more systematic.
  */
 public class FileHandler {
-	public Mat photo = new Mat();
 
-	public FileHandler(String path){
-		photo = Imgcodecs.imread(
+	public static Mat readMatImage(String path) {
+		return Imgcodecs.imread(
 				FileHandler.class.getClass().getResource(path).getPath()
 				);
 	}
