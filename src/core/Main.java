@@ -1,7 +1,6 @@
 package core;
 
-import analysis.*;
-import util.*;
+import analysis.Blank;
 
 public class Main {
 	public static void main(String args[]){
