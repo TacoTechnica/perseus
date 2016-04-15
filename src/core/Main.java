@@ -9,7 +9,7 @@ public class Main {
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 
 		String[] path = new String[1];
-		path[0] = "/Users/owencarter/Desktop/Perseus/photos/0326_5deg_LPBlank1.NEF";
+		path[0] = "0412_90degBarlow_LPBlank1";
 		new Blank(path);
 	}
 }
